@@ -1,0 +1,16 @@
+{
+  "name": "openia_chromadb",
+  "version": "1.0.0",
+  "description": "Embedding with OpenAI and ChromaDB poc ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matheus Filipe",
+  "license": "ISC",
+  "dependencies": {
+    "chromadb": "^1.5.11",
+    "dotenv": "^16.3.1",
+    "openai": "^4.13.0"
+  }
+}
