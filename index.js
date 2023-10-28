@@ -20,6 +20,11 @@ await collection.add({
    documents: ["This is a document", "This is another document"],
 });
 
+const results = await collection.query({
+   nResults: 2,
+   queryTexts: ["This is a query document"],
+ });
+
 async function main() {
    const completion = await openai.chat.completions.create({
       messages: [{ role: "system", content: "You are a helpful assistant." }],
