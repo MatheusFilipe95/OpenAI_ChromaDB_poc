@@ -9,6 +9,11 @@ const embedder = new OpenAIEmbeddingFunction({
    openai_api_key: process.env.OPENAI_API_KEY,
 });
 
+const collection = await client.createCollection({
+   name: "my_collection",
+   embeddingFunction: embedder,
+ });
+
 async function main() {
    const completion = await openai.chat.completions.create({
       messages: [{ role: "system", content: "You are a helpful assistant." }],
