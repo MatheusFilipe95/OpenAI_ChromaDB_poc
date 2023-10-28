@@ -12,7 +12,13 @@ const embedder = new OpenAIEmbeddingFunction({
 const collection = await client.createCollection({
    name: "my_collection",
    embeddingFunction: embedder,
- });
+});
+
+await collection.add({
+   ids: ["id1", "id2"],
+   metadatas: [{ source: "my_source" }, { source: "my_source" }],
+   documents: ["This is a document", "This is another document"],
+});
 
 async function main() {
    const completion = await openai.chat.completions.create({
